@@ -74,15 +74,15 @@ const Compose = () => {
 
   // async launch POST with access token
   const postTweet = async (user, description, priv, pic) => {
-    const access_token = getAccessToken();
-    console.log('access_token:');
-    console.log(access_token);
+    // const access_token = getAccessToken();
+    // console.log('access_token:');
+    // console.log(access_token);
     const paramdict = {
       'user': user,
       'description': description,
       'private': priv,
       'pic': pic,
-      'access-token': access_token,
+      //'access-token': access_token,
     }
     console.log('postTweet paramdict:');
     console.log(paramdict);
@@ -98,7 +98,7 @@ const Compose = () => {
       }
       console.log("Compose.js: fetching from " + `${process.env.REACT_APP_API_SERVICE_URL}/tweet`)
       //const response = await fetch("http://localhost:5000/tweet", config);
-      const response = await fetch(`${process.env.REACT_APP_BE_NETWORK}:${process.env.REACT_APP_BE_PORT}/tweet`, config);
+      const response = await fetch(`${process.env.REACT_APP_API_SERVICE_URL}/tweet`, config);
       // const response = await fetch(`tweet`, config);
       //const json = await response.json()
       if (response.ok) {
